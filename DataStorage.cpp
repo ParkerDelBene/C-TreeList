@@ -28,13 +28,16 @@ TreeList::~TreeList(){
 This function displays all items in the TreeList by calling the recursive display function.
 */
 void TreeList::displayItems(){
-  int start = 0;
   if(this->head != NULL){
     if(this->toggleAlph == 0){
-      this->display(this->head,start);
+      this->display(this->head);
+      cout << "NULL";
+      cout << endl;
     }
     else{
-      this->alphDisplay(this->root,start);
+      this->alphDisplay(this->root);
+      cout << "NULL";
+      cout << endl;
     }
   }
   else{
@@ -45,10 +48,10 @@ void TreeList::displayItems(){
 /*
 This Function is called by the displayItems function. It recursively displays the item names.
 */
-void TreeList::display(Node* node, int num){
-  cout << (num+1) << ": " << node->num << endl;
+void TreeList::display(Node* node){
+  cout << node->num << "->";
   if(node->next != NULL){
-    this->display(node->next,(num+1));
+    this->display(node->next);
   }
 }
 
@@ -186,18 +189,18 @@ void TreeList::recInsert(Node* newNode, Node* currentNode){
 This function recursively prints out the TreeList in alphabetical order
 using the imbedded binary tree in the Node Structure
 */
-void TreeList::alphDisplay(Node* node, int& num){
+void TreeList::alphDisplay(Node* node){
   if(node->left != NULL){
-    this->alphDisplay(node->left, num);
+    this->alphDisplay(node->left);
   }
 
 
-  cout << (num+1) << ": " << node->num << endl;
-  num = num+1;
+  cout << node->num << "->";
 
   if(node->right != NULL){
-    this->alphDisplay(node->right, num);
+    this->alphDisplay(node->right);
   }
+
 }
 
 /*

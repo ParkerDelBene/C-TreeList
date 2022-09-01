@@ -39,7 +39,7 @@ private:
   };
 
   //display is a recursive function called by the displayItems public function
-  void display(Node*, int);
+  void display(Node*);
   //deleteCache is a recursive functionction called by the deconstructor that recursively deletes 
   //the TreeList data structure
   void deleteCache(Node*);
@@ -49,7 +49,7 @@ private:
   void recInsert(Node*, Node*);
   //this function is to print the TreeList in alphabetical order using the
   //Binary tree portion of the TreeList
-  void alphDisplay(Node*, int&);
+  void alphDisplay(Node*);
   //refactor is the tree optimization method that is used to balance the Binary Tree Portion 
   //of the Data Structure
   void refactor(Node*);
@@ -57,12 +57,15 @@ private:
   void left(Node*);
   //right is the right rotation function;
   void right(Node*);
-  //these function are essentially redundant functions for ease of coding
+  //these functions are essentially redundant functions for ease of coding
   //they combine the left right and right left functions for easy rotations.
   void leftright(Node*);
   void rightleft(Node*);
   //this function indicates the height of difference between two subtrees.
   void height(Node*);
+  //This function is used to sort the linked list using the Binary Tree Portion
+  //of the Node structure.
+  void sortList(bool);
   Node* head;
   Node* tail;
   Node* root;
