@@ -46,7 +46,7 @@ void TreeList::displayItems(){
 This Function is called by the displayItems function. It recursively displays the item names.
 */
 void TreeList::display(Node* node, int num){
-  cout << (num+1) << ": " << node->item << endl;
+  cout << (num+1) << ": " << node->num << endl;
   if(node->next != NULL){
     this->display(node->next,(num+1));
   }
@@ -124,7 +124,7 @@ void TreeList::deleteItem(){
   cout << "Which one would you like to delete?" << endl;
   cin >> selector;
 
-  //verifying the input is within the actualy number of items
+  //verifying the input is within the actual number of items
   while(selector < 0 || cin.fail() || selector > this->numItems){
     cin.clear();
     cin.ignore();

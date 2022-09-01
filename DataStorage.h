@@ -69,7 +69,7 @@ private:
   //used to quickyl assess the items in the TreeList
   int numItems;
   //this int is used to toggle between alphabetical order or date input order.
-  int toggleAlph;
+  bool toggleAlph;
 
 };
 
