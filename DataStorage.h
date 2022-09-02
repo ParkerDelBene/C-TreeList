@@ -28,6 +28,9 @@ public:
   // function, which optimizes the TreeList by using rotation methods, and then applies the 
   // toggleAlph integer to sort the Linked List Portion.
   void refactorTree();
+  //This function is used to sort the linked list using the Binary Tree Portion
+  //of the Node structure.
+  void sortList(bool);
 
 private:
 
@@ -63,9 +66,11 @@ private:
   void rightleft(Node*);
   //this function indicates the height of difference between two subtrees.
   void height(Node*);
-  //This function is used to sort the linked list using the Binary Tree Portion
-  //of the Node structure.
-  void sortList(bool);
+  //This function is a recursive subpart to the sortlist function
+  void recSortAsc(Node*);
+  //this function is a recursive subpart to the sortlist function
+  void recSortDesc(Node*);
+
   Node* head;
   Node* tail;
   Node* root;

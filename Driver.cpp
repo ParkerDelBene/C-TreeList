@@ -31,6 +31,10 @@ int main(){
 
   Storage->displayItems();
 
+  //Storage->sortList(true);
+
+  //Storage->displayItems();
+
 
 
 
