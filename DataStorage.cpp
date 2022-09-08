@@ -220,8 +220,8 @@ void TreeList::toggleSort(){
   This function sorts the Linked List using the Binary Tree.
 */
 void TreeList::sortList(bool trigger){
-  this->head == NULL;
-  this->tail == NULL;
+  this->head = NULL;
+  this->tail = NULL;
   if(trigger){
     this->recSortAsc(this->root);
     this->tail->next == NULL;
@@ -235,24 +235,22 @@ void TreeList::sortList(bool trigger){
   This functin is a subpart of the sortList function
 */
 void TreeList::recSortAsc(Node* node){
-  cout << node->num << "->";
   if(node->left != NULL){
     this->recSortAsc(node->left);
   }
 
   if(this->head == NULL){
     this->head = node;
-    cout << node->num << "->";
   }
   else if(this->tail == NULL){
     this->tail = node;
     this->head->next = tail;
-    cout << node->num << "->";
+    this->tail->next = NULL;
   }
   else{
     this->tail->next = node;
     this->tail = node;
-    cout << node->num << "->";
+    this->tail->next = NULL;
   }
 
   if(node->right != NULL){
