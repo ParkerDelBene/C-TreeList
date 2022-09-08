@@ -1,29 +1,26 @@
 #include "DataStorage.h"
 #include <iostream>
-#include <stdlib.h>
 #include <time.h>
+#include <fstream>
 using namespace std;
 
 int main(){
 
-  srand(time(NULL));
-  int randInt = rand() % 1000;
-  srand(randInt);
+  ifstream Infile;
+  Infile.open("Random_Numbers.csv");
+  int num;
+  int count = 0;
 
   TreeList* Storage = new TreeList;
 
-  Storage->addItem(10);
-  Storage->addItem(7);
-  Storage->addItem(15);
-  Storage->addItem(12);
-  Storage->addItem(16);
-  Storage->addItem(4);
-  Storage->addItem(2);
-  Storage->addItem(1);
-  Storage->addItem(3);
-  Storage->addItem(20);
-  Storage->addItem(11);
-  Storage->addItem(6);
+  Infile >> num;
+  count++;
+  while(!Infile.eof()){
+    cout << count << endl;
+    Storage->addItem(num);
+    Infile >> num;
+    count++;
+  }
 
   Storage->displayItems();
 

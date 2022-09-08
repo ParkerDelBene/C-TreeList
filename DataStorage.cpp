@@ -167,7 +167,7 @@ Recursive function to insert the TreeList item into the alphabetical order in th
 Portion of the TreeList
 */
 void TreeList::recInsert(Node* newNode, Node* currentNode){
-  if(newNode->num < currentNode->num){
+  if(newNode->num <= currentNode->num){
     if(currentNode->left == NULL){
       currentNode->left = newNode;
     }
