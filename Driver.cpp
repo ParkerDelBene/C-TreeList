@@ -1,27 +1,19 @@
 #include "DataStorage.h"
 #include <iostream>
 #include <time.h>
+#include <cstdlib>
 #include <fstream>
 using namespace std;
 
 int main(){
 
-  ifstream Infile;
-  Infile.open("Random_Numbers.csv");
-  int num;
-  int count = 0;
+  srand(time(NULL));
 
   TreeList* Storage = new TreeList;
 
-  Infile >> num;
-  count++;
-  while(!Infile.eof()){
-    cout << count << endl;
-    Storage->addItem(num);
-    Infile >> num;
-    count++;
+  for(int i = 0; i < 200000; i++){
+    Storage->addItem(rand() % 1000000 + 1);
   }
-
   Storage->displayItems();
 
   Storage->toggleSort();
